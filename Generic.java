@@ -1,14 +1,13 @@
-
 package com.classproblem;
 
-public class PraGenericUC3 <X, Y, Z> {
+public class PraGenericUC4 <X, Y, Z> {
 	X[] myXArray;
 	Y[] myYArray;
 	Z[] myZArray;
 
 
-	public PraGenericUC3(X[] myXArray, Y[] myYArray, Z[] myZArray) {
-		super();
+	public PraGenericUC4(X[] myXArray, Y[] myYArray, Z[] myZArray) {
+		
 		this.myXArray = myXArray;
 		this.myYArray = myYArray;
 		this.myZArray = myZArray;
@@ -22,14 +21,28 @@ public class PraGenericUC3 <X, Y, Z> {
 //		toPrint(a);
 //		toPrint(b);
 //		toPrint(c);
-		new PraGenericUC3<Integer, Double, Character>(a, b, c).toPrint();
-
+		new PraGenericUC4<Integer, Double, Character>(a, b, c).toPrint();
 	}
+
 	private void toPrint() {
 		toPrint(myXArray);
 		toPrint(myYArray);
 		toPrint(myZArray);
 	}
+	
+	public static Integer testMax(Integer x,Integer y, Integer z) {
+		Integer max = x;
+		if(y.compareTo(max) > 0) {
+			max = y;
+		}
+		if(z.compareTo(max) > 0) {
+			max = z;
+		}
+//       printMax(x, y, z, max);
+        return max;
+
+	}
+	
 	private static <E> void toPrint(E[] a) {
 
 		for (E i:a) {
