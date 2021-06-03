@@ -1,6 +1,11 @@
 package com.classproblem;
 
-public class PraGenericUC1 {
+public class PraGenericUC2 <E> {
+	E[] myArray;
+
+	public PraGenericUC2(E[] myArray) {
+		this.myArray = myArray;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -11,6 +16,12 @@ public class PraGenericUC1 {
 		toPrint(a);
 		toPrint(b);
 		toPrint(c);
+		new PraGenericUC2<Integer>(a).toPrint(a);
+		new PraGenericUC2<Double>(b).toPrint(b);
+		new PraGenericUC2<Character>(c).toPrint(c);
+	}
+	private void toPrint() {
+		toPrint(myArray);
 	}
 	private static <E> void toPrint(E[] a) {
 
